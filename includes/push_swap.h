@@ -22,4 +22,9 @@ typedef struct s_stack
 
 # include "../libft/includes/libft.h"
 
+t_stack	*ft_lstnew_int(int nbr);
+t_stack	*ft_lstlast_int(t_stack *lst);
+void	ft_lstadd_back_int(t_stack **lst, t_stack *new);
+t_stack	*init_stack(int argc, char **argv);
+
 #endif
