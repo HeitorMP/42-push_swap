@@ -1,20 +1,8 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/17 10:26:44 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/17 12:13:48 by hmaciel-         ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include "../includes/push_swap.h"
 
-t_stack	*ft_lstnew_int(int nbr)
+t_lst	*ft_lstnew_int(int nbr)
 {
-	t_stack	*node;
+	t_lst	*node;
 
 	node = malloc(sizeof(t_list));
 	if (!node)
@@ -24,7 +12,7 @@ t_stack	*ft_lstnew_int(int nbr)
 	return (node);
 }
 
-t_stack	*ft_lstlast_int(t_stack *lst)
+t_lst	*ft_lstlast_int(t_lst *lst)
 {
 	while (lst)
 	{
@@ -36,9 +24,20 @@ t_stack	*ft_lstlast_int(t_stack *lst)
 	return (lst);
 }
 
-void	ft_lstadd_back_int(t_stack **lst, t_stack *new)
+void	ft_lstadd_front_int(t_lst **lst, t_lst *new)
 {
-	t_stack	*node;
+	if (!lst)
+	{
+		*lst = ft_lstnew_int(new->n);
+		return ;
+	}
+	new->next = *lst;
+	*lst = new;
+}
+
+void	ft_lstadd_back_int(t_lst **lst, t_lst *new)
+{
+	t_lst	*node;
 
 	if (!lst[0])
 		lst[0] = new;
@@ -49,9 +48,9 @@ void	ft_lstadd_back_int(t_stack **lst, t_stack *new)
 	}
 }
 
-void	print_stack(t_stack *stack)
+void	print_lst(t_lst *stack)
 {
-	t_stack *head;
+	t_lst *head;
 
 	head = stack;
 	while (stack)
