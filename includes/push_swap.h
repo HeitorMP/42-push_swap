@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/18 17:39:07 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/20 16:56:35 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,13 @@ t_lst	*ft_lstnew_int(int nbr);
 t_lst	*ft_lstlast_int(t_lst *lst);
 void	ft_lstadd_back_int(t_lst **lst, t_lst *new);
 void	ft_lstadd_front_int(t_lst **lst, t_lst *new);
-void	print_lst(t_lst *stack);
-
+void	print_lst(t_stack *stack);
+void	pb(t_stack *stacks);
+void	pa(t_stack *stacks);
+void	sa(t_stack *stacks);
+void	sb(t_stack *stacks);
+void	ss(t_stack *stacks);
+void	ra(t_stack *stacks);
+void	free_all(t_stack *stack);
 
 #endif

@@ -7,7 +7,7 @@ LIBFT_DIR	=	./libft
 
 #Sources Variables
 SRCS		=	push_swap.c \
-				srcs/utils.c
+				srcs/utils.c srcs/push.c srcs/swap.c srcs/rotate.c
 
 INCLUDES	=	-I. -I$(LIBFT_DIR)
 
@@ -33,4 +33,5 @@ fclean:
 
 re: fclean all
 
+.SILENT:
 .PHONY: all clean fclean re mandatory m bonus b
