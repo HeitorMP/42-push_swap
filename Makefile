@@ -7,7 +7,7 @@ LIBFT_DIR	=	./libft
 
 #Sources Variables
 SRCS		=	push_swap.c \
-				srcs/utils.c srcs/push.c srcs/swap.c srcs/rotate.c
+				srcs/utils.c srcs/push.c srcs/swap.c srcs/rotate.c srcs/rotate_reverse.c srcs/temp_utils.c
 
 INCLUDES	=	-I. -I$(LIBFT_DIR)
 

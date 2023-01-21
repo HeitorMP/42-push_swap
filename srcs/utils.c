@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/20 16:56:15 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/21 08:40:28 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,40 +58,6 @@ void	ft_lstadd_back_int(t_lst **lst, t_lst *new)
 		node = ft_lstlast_int(*lst);
 		node->next = new;
 	}
-}
-
-void	print_lst(t_stack *stack)
-{
-	t_lst	*head_a;
-	t_lst	*head_b;
-	size_t		size;
-	size_t		index;
-
-	index = 0;
-	head_a = stack->a;
-	head_b = stack->b;
-	if (stack->size_a > stack->size_b)
-		size = stack->size_a;
-	else
-		size = stack->size_b;
-	while (index < size)
-	{
-		if (index < stack->size_a)
-		{
-			ft_printf("%d", stack->a->n);
-			stack->a = stack->a->next;
-		}
-		ft_printf("\t");
-		if (index < stack->size_b)
-		{
-			ft_printf("%d\n", stack->b->n);
-			stack->b = stack->b->next;
-		}
-		index++;
-	}
-	ft_printf("\nstk a | stk b\n");
-	stack->a = head_a;
-	stack->b = head_b;
 }
 
 void	free_all(t_stack *stack)
