@@ -68,6 +68,17 @@ int	main(int argc, char **argv)
 	ft_printf("--------RR------------\n");
 	rr(&stacks);
 	print_lst(&stacks);
+	ft_printf("--------RRA------------\n");
+	rra(&stacks);
+	print_lst(&stacks);
+	ft_printf("--------RRB------------\n");
+	rrb(&stacks);
+	print_lst(&stacks);
+	ft_printf("--------RRR------------\n");
+	rrr(&stacks);
+	print_lst(&stacks);
+
+
 
 	free_all(&stacks);
 }
