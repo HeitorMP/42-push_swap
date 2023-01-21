@@ -13,17 +13,18 @@
 #include "./includes/push_swap.h"
 
 int	main(int argc, char **argv)
-{	
+{
 	t_stack	stacks;
 
 	t_lst	*temp;
 	t_lst	*temp2;
+	t_lst	*temp3;
 
 	(void)argc;
 	(void)argv;
 
 	stacks.size_b = 2;
-	stacks.size_a = 2;
+	stacks.size_a = 3;
 
 	stacks.b = ft_lstnew_int(9);
 	temp2 = ft_lstnew_int(8);
@@ -31,7 +32,9 @@ int	main(int argc, char **argv)
 
 	stacks.a = ft_lstnew_int(1);
 	temp = ft_lstnew_int(5);
+	temp3 = ft_lstnew_int(7);
 	ft_lstadd_back_int(&stacks.a, temp);
+	ft_lstadd_back_int(&stacks.a, temp3);
 
 	ft_printf("INITIAL\n");
 	print_lst(&stacks);
@@ -59,5 +62,12 @@ int	main(int argc, char **argv)
 	ft_printf("--------RA------------\n");
 	ra(&stacks);
 	print_lst(&stacks);
+	ft_printf("--------RB------------\n");
+	rb(&stacks);
+	print_lst(&stacks);
+	ft_printf("--------RR------------\n");
+	rr(&stacks);
+	print_lst(&stacks);
+
 	free_all(&stacks);
 }

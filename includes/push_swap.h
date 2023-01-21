@@ -42,6 +42,8 @@ void	sa(t_stack *stacks);
 void	sb(t_stack *stacks);
 void	ss(t_stack *stacks);
 void	ra(t_stack *stacks);
+void	rb(t_stack *stacks);
+void	rr(t_stack *stacks);
 void	free_all(t_stack *stack);
 
 #endif

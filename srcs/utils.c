@@ -89,7 +89,7 @@ void	print_lst(t_stack *stack)
 		}
 		index++;
 	}
-	ft_printf("stk a | stk b\n");
+	ft_printf("\nstk a | stk b\n");
 	stack->a = head_a;
 	stack->b = head_b;
 }
