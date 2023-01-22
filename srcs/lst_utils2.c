@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:24:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/22 09:11:09 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/22 11:11:53 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,9 +24,7 @@ int	lst_has_repeated(t_stack *stacks)
 		while (temp2)
 		{
 			if (ft_cmp(temp->n, temp2->n) == 0)
-			{
 				return (1);
-			}
 			temp2 = temp2->next;
 		}
 		temp = temp->next;
