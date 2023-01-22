@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/03 15:21:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/18 15:06:21 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/22 08:38:05 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -108,8 +108,10 @@ char			*get_next_line(int fd);
 char			*ft_strchr_gnl(char *s, int c);
 char			*ft_strjoin_gnl(char *s1, char *s2);
 
-/* UTILS */
+/* EXTRAS */
 
 int				ft_get_digits(long long int nb);
+int				ft_cmp(int a, int b);
+int				ft_str_is_numeric(char *str);
 
 #endif

@@ -26,7 +26,7 @@ SRCS		=	ft_printf/ft_printf.c ft_printf/ft_printf_chars.c ft_printf/ft_printf_nu
 				libft/ft_putstr_fd.c libft/ft_strjoin.c libft/ft_strtrim.c libft/ft_striteri.c libft/ft_strmapi.c \
 				libft/ft_lstadd_back.c libft/ft_lstadd_front.c libft/ft_lstclear.c libft/ft_lstdelone.c libft/ft_lstiter.c libft/ft_lstlast.c \
 				libft/ft_lstmap.c libft/ft_lstnew.c libft/ft_lstsize.c \
-				utils/ft_get_digits.c
+				extras/ft_get_digits.c extras/ft_str_is_numeric.c extras/ft_cmp.c
 
 CC			= cc
 CFLAGS		= -Wall -Wextra -Werror

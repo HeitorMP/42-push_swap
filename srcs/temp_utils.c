@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/21 08:39:46 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/21 08:51:21 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/22 09:12:12 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ static size_t	get_size(t_stack *stacks)
 	return (size);
 }
 
-void	put_node(t_stack *stacks)
+static void	put_node(t_stack *stacks)
 {
 	size_t	index;
 	size_t	size;
@@ -35,7 +35,7 @@ void	put_node(t_stack *stacks)
 	{
 		if (index < stacks->size_a)
 		{
-			ft_printf("%d", stacks->a->n);
+			ft_printf("\n%d", stacks->a->n);
 			stacks->a = stacks->a->next;
 		}
 		ft_printf("\t");
@@ -56,7 +56,7 @@ void	print_lst(t_stack *stacks)
 	head_a = stacks->a;
 	head_b = stacks->b;
 	put_node(stacks);
-	ft_printf("\nstk a | stk b\n");
+	ft_printf("\na | b\n");
 	stacks->a = head_a;
 	stacks->b = head_b;
 }
