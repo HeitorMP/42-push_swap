@@ -6,11 +6,11 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/22 08:23:07 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/23 10:37:11 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 t_lst	*ft_lstnew_int(int nbr)
 {

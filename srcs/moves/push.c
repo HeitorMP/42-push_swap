@@ -6,11 +6,11 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 10:00:55 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/21 08:41:49 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/23 12:20:35 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "../includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
 void	pb(t_stack *stacks)
 {
@@ -34,6 +34,7 @@ void	pb(t_stack *stacks)
 		stacks->size_a--;
 	}
 	stacks->a = stacks->a->next;
+	ft_printf("pb\n");
 	free(old_head);
 }
 
@@ -59,5 +60,6 @@ void	pa(t_stack *stacks)
 		stacks->size_b--;
 	}
 	stacks->b = stacks->b->next;
+	ft_printf("pa\n");
 	free(old_head);
 }

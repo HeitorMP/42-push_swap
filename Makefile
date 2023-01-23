@@ -7,8 +7,10 @@ LIBFT_DIR	=	./libft
 
 #Sources Variables
 SRCS		=	push_swap.c \
-				srcs/lst_utils.c srcs/lst_utils2.c srcs/push.c srcs/swap.c srcs/rotate.c srcs/rotate_reverse.c srcs/print_stacks.c \
-				srcs/init_stack.c
+				srcs/resources/lst_utils.c srcs/resources/lst_utils2.c srcs/resources/print_stacks.c \
+				srcs/moves/push.c srcs/moves/swap.c srcs/moves/rotate.c srcs/moves/rotate_reverse.c \
+				srcs/sort/sort_router.c \
+				srcs/init_stacks/init_stacks.c srcs/init_stacks/check_errors.c \
 
 INCLUDES	=	-I. -I$(LIBFT_DIR)
 

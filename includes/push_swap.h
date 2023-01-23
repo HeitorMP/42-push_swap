@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/22 12:20:05 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/23 16:35:19 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/includes/libft.h"
+# include <stdio.h>
 
 typedef struct s_lst
 {
@@ -39,16 +40,18 @@ int		lst_has_repeated(t_stack *stacks);
 void	print_lst(t_stack *stack);
 void	pb(t_stack *stacks);
 void	pa(t_stack *stacks);
-void	sa(t_stack *stacks);
-void	sb(t_stack *stacks);
+void	sa(t_stack *stacks, int from_ss);
+void	sb(t_stack *stacks, int from_ss);
 void	ss(t_stack *stacks);
-void	ra(t_stack *stacks);
-void	rb(t_stack *stacks);
+void	ra(t_stack *stacks, int from_rr);
+void	rb(t_stack *stacks, int from_rr);
 void	rr(t_stack *stacks);
-void	rra(t_stack *stacks);
-void	rrb(t_stack *stacks);
+void	rra(t_stack *stacks, int from_rrr);
+void	rrb(t_stack *stacks, int from_rrr);
 void	rrr(t_stack *stacks);
 void	free_all(t_stack *stack);
 int		init_stacks(int argc, char **argv, t_stack *stacks);
+void	sort(t_stack *stacks);
+int		has_init_errors(int argc, char **argv);
 
 #endif
