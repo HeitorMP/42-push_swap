@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 17:15:56 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/23 18:44:13 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,10 +45,35 @@ static void	sort_3(t_stack *stacks)
 	}
 }
 
+static void	sort_more(t_stack *stacks)
+{
+	while(stacks->a)
+	{
+		pb(stacks);
+		if (stacks->size_b > 1)
+		{
+			if (stacks->b->n < stacks->b->next->n)
+				sb(stacks, 0);
+		}
+	}
+	while (stacks->b)
+	{
+		pa(stacks);
+		if (stacks->size_a > 1)
+		{
+			if (stacks->a->n > stacks->a->next->n)
+				sa(stacks, 0);
+		}
+	}
+}
+
+
 void	sort(t_stack *stacks)
 {
 	if (stacks->size_a == 2)
 		sort_2(stacks);
 	else if (stacks->size_a == 3)
 		sort_3(stacks);
+	else if (stacks->size_a > 3)
+		sort_more(stacks);
 }
