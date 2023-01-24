@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 07:44:52 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 17:29:57 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:59:35 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,21 +19,29 @@
 */
 int	init_stacks(int argc, char **argv, t_stack *stacks)
 {
-	int		i;
+	int		count_words;
+	char	**array;
 
-	i = 1;
-	stacks->size_a = argc - 1;
-	stacks->size_b = 0;
-	stacks->a = NULL;
-	stacks->b = NULL;
-	if (has_init_errors(argc, argv) == 1)
-		return (-1);
-	if (stacks->size_a < 2)
-		return (0);
-	while (i < argc)
+	if (argc == 2)
 	{
-		ft_lstadd_back_int(&stacks->a, ft_lstnew_int(ft_atoi(argv[i])));
-		i++;
+		array = ft_split(argv[1], ' ');
+		count_words = ft_count_words(argv[1], ' ');
+		if (has_init_errors(count_words, array, 0))
+		{
+			free(array);
+			return (-1);
+		}
+		init_with_array(count_words, array, stacks);
+		if (stacks->size_a < 2)
+			return (0);
+	}
+	else
+	{
+		if (has_init_errors(argc, argv, 1) == 1)
+			return (-1);
+		init_with_params(argc, argv, stacks);
+		if (stacks->size_a < 2)
+			return (0);
 	}
 	return (1);
 }

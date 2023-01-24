@@ -6,22 +6,24 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:03:49 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 17:27:54 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:56:12 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "../../includes/push_swap.h"
 
-static int	is_not_numeric(int argc, char **argv)
+static int	is_not_numeric(int argc, char **argv, int from)
 {
 	int	index;
 	int	index2;
 
-	index = 1;
+	index = 0;
+	if (from == 1)
+		index++;
 	index2 = 0;
 	while (index < argc)
 	{
-		while(argv[index][index2] != '\0')
+		while (argv[index][index2] != '\0')
 		{
 			if (argv[index][index2] == '-' || argv[index][index2] == '+')
 				index2++;
@@ -35,33 +37,37 @@ static int	is_not_numeric(int argc, char **argv)
 	return (0);
 }
 
-static int	has_repeated(int argc, char **argv)
+static int	has_repeated(int argc, char **argv, int from)
 {
-	int	index1;
+	int	index;
 	int	index2;
 
-	index1 = 1;
+	index = 0;
+	if (from == 1)
+		index++;
 	index2 = 0;
-	while (index1 < argc)
+	while (index < argc)
 	{
-		index2 = index1 + 1;
+		index2 = index + 1;
 		while (index2 < argc)
 		{
-			if (ft_cmp(ft_atoi(argv[index1]), ft_atoi(argv[index2])) == 0)
+			if (ft_cmp(ft_atoi(argv[index]), ft_atoi(argv[index2])) == 0)
 				return (1);
 			index2++;
 		}
-		index1++;
+		index++;
 	}
 	return (0);
 }
 
-static int	is_out_of_int_range(int argc, char **argv)
+static int	is_out_of_int_range(int argc, char **argv, int from)
 {
 	long long	n;
 	int			index;
 
-	index = 1;
+	index = 0;
+	if (from == 1)
+		index++;
 	while (index < argc)
 	{	
 		n = ft_atoll(argv[index]);
@@ -72,13 +78,13 @@ static int	is_out_of_int_range(int argc, char **argv)
 	return (0);
 }
 
-int	has_init_errors(int argc, char **argv)
+int	has_init_errors(int argc, char **argv, int from)
 {
-	if (is_not_numeric(argc, argv))
+	if (is_not_numeric(argc, argv, from))
 		return (1);
-	if (is_out_of_int_range(argc, argv))
+	if (is_out_of_int_range(argc, argv, from))
 		return (1);
-	if (has_repeated(argc, argv))
+	if (has_repeated(argc, argv, from))
 		return (1);
 	return (0);
 }

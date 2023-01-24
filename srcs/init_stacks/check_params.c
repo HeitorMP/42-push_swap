@@ -1,31 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   check_params.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 14:41:16 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:48:04 by hmaciel-         ###   ########.fr       */
+/*   Created: 2023/01/24 11:13:13 by hmaciel-          #+#    #+#             */
+/*   Updated: 2023/01/24 15:57:47 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+int	check_first_param(char *str)
 {
-	t_stack	stacks;
-	int	init_handler;
-
-	init_handler = init_stacks(argc, argv, &stacks);
-	if (init_handler == -1)
-	{
-		ft_printf("Error\n");
+	if (ft_count_words(str, ' ') > 1)
 		return (1);
-	}
-	else if (init_handler == 0)
-		return (0);
-	sort(&stacks);
-	print_lst(&stacks);
-	free_stack(&stacks);
+	return (0);
 }

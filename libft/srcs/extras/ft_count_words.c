@@ -1,31 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   ft_count_words.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 14:41:16 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:48:04 by hmaciel-         ###   ########.fr       */
+/*   Created: 2023/01/24 11:17:21 by hmaciel-          #+#    #+#             */
+/*   Updated: 2023/01/24 14:47:54 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "libft.h"
 
-int	main(int argc, char **argv)
+int	ft_count_words(char const *s, char c)
 {
-	t_stack	stacks;
-	int	init_handler;
+	int	words;
+	int	index;
+	int	is_new;
 
-	init_handler = init_stacks(argc, argv, &stacks);
-	if (init_handler == -1)
+	is_new = 1;
+	index = 0;
+	words = 0;
+	while (s[index])
 	{
-		ft_printf("Error\n");
-		return (1);
+		if (s[index] == c)
+			is_new = 1;
+		if (s[index] != c && is_new)
+		{
+			words++;
+			is_new = 0;
+		}
+		index++;
 	}
-	else if (init_handler == 0)
-		return (0);
-	sort(&stacks);
-	print_lst(&stacks);
-	free_stack(&stacks);
+	return (words);
 }

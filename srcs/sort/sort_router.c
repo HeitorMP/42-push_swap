@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 18:44:13 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:55:47 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ static void	sort_3(t_stack *stacks)
 
 static void	sort_more(t_stack *stacks)
 {
-	while(stacks->a)
+	while (stacks->a)
 	{
 		pb(stacks);
 		if (stacks->size_b > 1)
@@ -66,7 +66,6 @@ static void	sort_more(t_stack *stacks)
 		}
 	}
 }
-
 
 void	sort(t_stack *stacks)
 {

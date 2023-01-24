@@ -1,31 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   push_swap.c                                        :+:      :+:    :+:   */
+/*   init_with_params.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/01/04 14:41:16 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:48:04 by hmaciel-         ###   ########.fr       */
+/*   Created: 2023/01/24 11:36:07 by hmaciel-          #+#    #+#             */
+/*   Updated: 2023/01/24 15:56:35 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "./includes/push_swap.h"
+#include "../../includes/push_swap.h"
 
-int	main(int argc, char **argv)
+void	init_with_params(int argc, char **argv, t_stack *stacks)
 {
-	t_stack	stacks;
-	int	init_handler;
+	int		i;
 
-	init_handler = init_stacks(argc, argv, &stacks);
-	if (init_handler == -1)
+	i = 1;
+	stacks->size_a = argc - 1;
+	stacks->size_b = 0;
+	stacks->a = NULL;
+	stacks->b = NULL;
+	while (i < argc)
 	{
-		ft_printf("Error\n");
-		return (1);
+		ft_lstadd_back_int(&stacks->a, ft_lstnew_int(ft_atoi(argv[i])));
+		i++;
 	}
-	else if (init_handler == 0)
-		return (0);
-	sort(&stacks);
-	print_lst(&stacks);
-	free_stack(&stacks);
 }

@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 16:35:19 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 15:51:23 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,13 @@ void	rr(t_stack *stacks);
 void	rra(t_stack *stacks, int from_rrr);
 void	rrb(t_stack *stacks, int from_rrr);
 void	rrr(t_stack *stacks);
-void	free_all(t_stack *stack);
+void	free_stack(t_stack *stack);
+void	free_array(char **array);
 int		init_stacks(int argc, char **argv, t_stack *stacks);
 void	sort(t_stack *stacks);
-int		has_init_errors(int argc, char **argv);
+int		has_init_errors(int argc, char **argv, int from);
+int		check_first_param(char *str);
+void	init_with_params(int argc, char **argv, t_stack *stacks);
+void	init_with_array(int argc, char **array, t_stack *stacks);
 
 #endif

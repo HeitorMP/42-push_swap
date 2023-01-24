@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/20 16:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/23 18:38:49 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 12:55:55 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,7 @@ void	ft_lstadd_back_int(t_lst **lst, t_lst *new)
 	}
 }
 
-void	free_all(t_stack *stack)
+void	free_stack(t_stack *stack)
 {
 	t_lst	*temp;
 
