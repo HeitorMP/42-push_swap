@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/24 11:37:43 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:57:00 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:32:40 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,5 @@ void	init_with_array(int argc, char **array, t_stack *stacks)
 		ft_lstadd_back_int(&stacks->a, ft_lstnew_int(ft_atoi(array[i])));
 		i++;
 	}
-	ft_printf("\n");
 	free_array(array);
 }

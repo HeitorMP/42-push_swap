@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 14:41:16 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:48:04 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/24 16:32:15 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,6 @@ int	main(int argc, char **argv)
 	else if (init_handler == 0)
 		return (0);
 	sort(&stacks);
-	print_lst(&stacks);
+	//print_lst(&stacks);
 	free_stack(&stacks);
 }
