@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:24:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:55:16 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:53:53 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,4 +44,38 @@ void	free_array(char **array)
 		i++;
 	}
 	free(array);
+}
+
+int	get_min_stack_a(t_stack *stacks)
+{
+	int		min;
+	t_lst	*temp;
+
+	min = stacks->a->n;
+	temp = stacks->a;
+	while (stacks->a)
+	{
+		if (stacks->a->n < min)
+			min = stacks->a->n;
+		stacks->a = stacks->a->next;
+	}
+	stacks->a = temp;
+	return (min);
+}
+
+int	get_max_stack_a(t_stack *stacks)
+{
+	int		max;
+	t_lst	*temp;
+
+	max = stacks->a->n;
+	temp = stacks->a;
+	while (stacks->a)
+	{
+		if (stacks->a->n > max)
+			max = stacks->a->n;
+		stacks->a = stacks->a->next;
+	}
+	stacks->a = temp;
+	return (max);
 }

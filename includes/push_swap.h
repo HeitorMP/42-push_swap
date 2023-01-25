@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:51:23 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/25 17:53:53 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,5 +57,7 @@ int		has_init_errors(int argc, char **argv, int from);
 int		check_first_param(char *str);
 void	init_with_params(int argc, char **argv, t_stack *stacks);
 void	init_with_array(int argc, char **array, t_stack *stacks);
+int		get_min_stack_a(t_stack *stacks);
+int		get_max_stack_a(t_stack *stacks);
 
 #endif

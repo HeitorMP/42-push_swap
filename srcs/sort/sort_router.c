@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/24 15:55:47 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/25 18:12:50 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,35 +44,66 @@ static void	sort_3(t_stack *stacks)
 		rra(stacks, 0);
 	}
 }
-
-static void	sort_more(t_stack *stacks)
+/*
+stack<int> sortStack(stack<int> &input)
 {
-	while (stacks->a)
+    stack<int> tmpStack;
+ 
+    while (!input.empty())
+    {
+        // pop out the first element
+        int tmp = input.top();
+        input.pop();
+ 
+        // while temporary stack is not empty and top
+        // of stack is greater than temp
+        while (!tmpStack.empty() && tmpStack.top() > tmp)
+        {
+            // pop from temporary stack and push
+            // it to the input stack
+            input.push(tmpStack.top());
+            tmpStack.pop();
+        }
+ 
+        // push temp in temporary of stack
+        tmpStack.push(tmp);
+    }
+ 
+    return tmpStack;
+}
+*/
+static void	sort_5(t_stack *stacks)
+{
+	int		min;
+	int		index;
+	t_lst	*temp;
+
+
+	temp = ft_lstlast_int(stacks->a);
+	index = 0;
+	//max = get_min_stack_a(stacks);
+	//if (max == stacks->a->n)
+	//	ra(stacks, 0);
+	while (index < 2)
 	{
+		min = get_min_stack_a(stacks);
+		if ()
+		while (stacks->a->n != min)
+			ra(stacks, 0);
 		pb(stacks);
-		if (stacks->size_b > 1)
-		{
-			if (stacks->b->n < stacks->b->next->n)
-				sb(stacks, 0);
-		}
+		index++;
 	}
-	while (stacks->b)
-	{
-		pa(stacks);
-		if (stacks->size_a > 1)
-		{
-			if (stacks->a->n > stacks->a->next->n)
-				sa(stacks, 0);
-		}
-	}
+	sort_3(stacks);
+	pa(stacks);
+	pa(stacks);
 }
 
 void	sort(t_stack *stacks)
 {
 	if (stacks->size_a == 2)
 		sort_2(stacks);
-	else if (stacks->size_a == 3)
+	else if (stacks->size_a <= 3)
 		sort_3(stacks);
-	else if (stacks->size_a > 3)
-		sort_more(stacks);
+	else if (stacks->size_a <= 5)
+		sort_5(stacks);
 }
