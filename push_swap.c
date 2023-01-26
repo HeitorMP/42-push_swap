@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/04 14:41:16 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/25 17:53:51 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:36:40 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 int	main(int argc, char **argv)
 {
 	t_stack	stacks;
-	int	init_handler;
+	int		init_handler;
 
 	init_handler = init_stacks(argc, argv, &stacks);
 	if (init_handler == -1)
@@ -25,7 +25,12 @@ int	main(int argc, char **argv)
 	}
 	else if (init_handler == 0)
 		return (0);
-	sort(&stacks);
+	if (!is_already_sort(&stacks))
+	{
+		set_already_simplified(&stacks);
+		lst_simplifier(&stacks);
+		sort(&stacks);
+	}
 	//print_lst(&stacks);
 	free_stack(&stacks);
 }

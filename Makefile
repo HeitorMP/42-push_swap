@@ -8,6 +8,7 @@ LIBFT_DIR	=	./libft
 #Sources Variables
 SRCS		=	push_swap.c \
 				srcs/resources/lst_utils.c srcs/resources/lst_utils2.c srcs/resources/print_stacks.c \
+				srcs/resources/sort_utils.c \
 				srcs/moves/push.c srcs/moves/swap.c srcs/moves/rotate.c srcs/moves/rotate_reverse.c \
 				srcs/sort/sort_router.c \
 				srcs/init_stacks/init_stacks.c srcs/init_stacks/check_errors.c srcs/init_stacks/check_params.c \

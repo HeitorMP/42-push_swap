@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 07:44:52 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/25 10:57:07 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 17:37:15 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,19 @@
 	0 - Only one element passing as param - do nothing.
 	-1 - Errors;
 */
+void	set_already_simplified(t_stack *stacks)
+{
+	t_lst	*head;
+
+	head = stacks->a;
+	while (stacks->a)
+	{
+		stacks->a->already_simplified = 0;
+		stacks->a = stacks->a->next;
+	}
+	stacks->a = head;
+}
+
 int	init_stacks(int argc, char **argv, t_stack *stacks)
 {
 	int		count_words;

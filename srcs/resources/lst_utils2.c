@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:24:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/25 17:53:53 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 14:43:44 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -78,4 +78,26 @@ int	get_max_stack_a(t_stack *stacks)
 	}
 	stacks->a = temp;
 	return (max);
+}
+
+int	is_best_move_ra(t_stack *stacks)
+{
+	int		min;
+	int		pos;
+	t_lst	*head;
+
+	pos = 0;
+	min = get_min_stack_a(stacks);
+	head = stacks->a;
+	while (stacks->a)
+	{
+		if (stacks->a->n == min)
+			break ;
+		stacks->a = stacks->a->next;
+		pos++;
+	}
+	stacks->a = head;
+	if (pos >= 3)
+		return (0);
+	return (1);
 }
