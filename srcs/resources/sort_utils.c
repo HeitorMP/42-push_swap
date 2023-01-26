@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:59:52 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 17:34:56 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:49:07 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,20 +36,29 @@ static void	get_min_simple_only(t_stack *stacks)
 {
 	t_lst		*min;
 	t_lst		*head;
+	size_t		size;
 	static int	value;
 
+	size = 0;
 	min = stacks->a;
 	head = stacks->a;
+	ft_printf("%d\n" , stacks->a->already_simplified);
+	ft_printf("%d\n\n" , stacks->a->next->already_simplified);
 	while (stacks->a)
 	{
-		if (stacks->a->n < min->n && min->already_simplified == 0)
+		if (stacks->a->n < min->n)
 			min = stacks->a;
 		stacks->a = stacks->a->next;
 	}
-	min->already_simplified = 1;
-	min->n = value;
+	if (min->already_simplified == 0)
+	{
+		min->already_simplified = 1;
+		min->n = value;
+	}
 	value++;
 	stacks->a = head;
+	ft_printf("%d\n" , stacks->a->already_simplified);
+	ft_printf("%d\n" , stacks->a->next->already_simplified);
 }
 
 void	lst_simplifier(t_stack *stacks)
@@ -59,7 +68,7 @@ void	lst_simplifier(t_stack *stacks)
 
 	head = stacks->a;
 	size = 0;
-	while (size <= stacks->size_a)
+	while (size < stacks->size_a)
 	{
 		get_min_simple_only(stacks);
 		size++;

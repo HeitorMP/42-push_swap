@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 17:36:29 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:12:09 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -62,5 +62,6 @@ int		is_best_move_ra(t_stack *stacks);
 int		is_already_sort(t_stack *stacks);
 void	lst_simplifier(t_stack *stacks);
 void	set_already_simplified(t_stack *stacks);
+void	radix_sort(t_stack *stacks);
 
 #endif

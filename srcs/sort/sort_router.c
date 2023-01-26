@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 17:34:02 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/26 18:12:48 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -106,6 +106,6 @@ void	sort(t_stack *stacks)
 		sort_4(stacks);
 	else if (stacks->size_a == 5)
 		sort_5(stacks);
-	//else
-		//sort_more(stacks);
+	else
+		radix_sort(stacks);
 }
