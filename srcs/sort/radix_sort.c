@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 18:02:46 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/27 15:35:57 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 17:10:17 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	radix_sort(t_stack *stacks)
 {
 	int	min;
 
-	while (stacks->size_a > 3)
+	while (stacks->size_a > 5)
 	{
 		min = get_min_stack_a(stacks);
 		if (is_best_move_ra(stacks))
@@ -64,7 +64,20 @@ void	radix_sort(t_stack *stacks)
 		}
 		pb(stacks);
 	}
-	sort_3(stacks);
+	sort_5(stacks);
 	while (stacks->size_b > 0)
 		pa(stacks);
+} */
+
+/* void	radix_sort(t_stack *stacks)
+{
+	t_lst	*head;
+
+	head = stacks->a;
+	while (stacks->a->next->next)
+	{
+		sort_3(stacks);
+		stacks->a = stacks->a->next;
+	}
+	stacks->a = head;
 } */

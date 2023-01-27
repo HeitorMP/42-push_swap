@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/27 13:47:12 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:51:11 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -65,7 +65,7 @@ static void	sort_4(t_stack *stacks)
 	pa(stacks);
 }
 
-static void	sort_5(t_stack *stacks)
+void	sort_5(t_stack *stacks)
 {
 	int		min;
 	int		index;
