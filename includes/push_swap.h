@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/18 16:08:09 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 18:12:09 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 15:33:39 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 # define PUSH_SWAP_H
 
 # include "../libft/includes/libft.h"
-# include <stdio.h>
+# include <limits.h>
 
 typedef struct s_lst
 {
@@ -63,5 +63,6 @@ int		is_already_sort(t_stack *stacks);
 void	lst_simplifier(t_stack *stacks);
 void	set_already_simplified(t_stack *stacks);
 void	radix_sort(t_stack *stacks);
+void	sort_3(t_stack *stacks);
 
 #endif

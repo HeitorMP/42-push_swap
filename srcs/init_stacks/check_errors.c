@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 13:03:49 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/25 11:14:26 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:10:28 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,7 +51,7 @@ static int	has_repeated(int argc, char **argv, int from)
 		index2 = index + 1;
 		while (index2 < argc)
 		{
-			if (ft_cmp(ft_atoi(argv[index]), ft_atoi(argv[index2])) == 0)
+			if (ft_cmp(ft_atoll(argv[index]), ft_atoll(argv[index2])) == 0)
 				return (1);
 			index2++;
 		}

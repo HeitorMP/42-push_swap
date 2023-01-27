@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/23 10:37:53 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 18:12:48 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 13:47:12 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ static void	sort_2(t_stack *stacks)
 		sa(stacks, 0);
 }
 
-static void	sort_3(t_stack *stacks)
+void	sort_3(t_stack *stacks)
 {	
 	int	a;
 	int	b;
@@ -48,9 +48,7 @@ static void	sort_3(t_stack *stacks)
 static void	sort_4(t_stack *stacks)
 {
 	int		min;
-	t_lst	*temp;
 
-	temp = ft_lstlast_int(stacks->a);
 	min = get_min_stack_a(stacks);
 	if (is_best_move_ra(stacks))
 	{
@@ -71,9 +69,7 @@ static void	sort_5(t_stack *stacks)
 {
 	int		min;
 	int		index;
-	t_lst	*temp;
 
-	temp = ft_lstlast_int(stacks->a);
 	index = 0;
 	while (index < 2)
 	{

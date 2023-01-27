@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/26 14:59:52 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 18:49:07 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 14:53:10 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,31 +34,33 @@ int	is_already_sort(t_stack *stacks)
 
 static void	get_min_simple_only(t_stack *stacks)
 {
-	t_lst		*min;
+	int			min;
 	t_lst		*head;
-	size_t		size;
-	static int	value;
+	static size_t		size;
 
-	size = 0;
-	min = stacks->a;
+	min = INT_MAX;
 	head = stacks->a;
-	ft_printf("%d\n" , stacks->a->already_simplified);
-	ft_printf("%d\n\n" , stacks->a->next->already_simplified);
 	while (stacks->a)
 	{
-		if (stacks->a->n < min->n)
-			min = stacks->a;
+		if (stacks->a->already_simplified == 0)
+		{
+			if (stacks->a->n < min)
+				min = stacks->a->n;
+		}
 		stacks->a = stacks->a->next;
 	}
-	if (min->already_simplified == 0)
-	{
-		min->already_simplified = 1;
-		min->n = value;
-	}
-	value++;
 	stacks->a = head;
-	ft_printf("%d\n" , stacks->a->already_simplified);
-	ft_printf("%d\n" , stacks->a->next->already_simplified);
+	while (stacks->a)
+	{
+		if (stacks->a->already_simplified == 0 && stacks->a->n == min)
+		{
+			stacks->a->n = size;
+			stacks->a->already_simplified = 1;
+		}
+		stacks->a = stacks->a->next;
+	}
+	size++;
+	stacks->a = head;
 }
 
 void	lst_simplifier(t_stack *stacks)

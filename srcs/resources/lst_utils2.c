@@ -6,7 +6,7 @@
 /*   By: hmaciel- <hmaciel-@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/22 08:24:17 by hmaciel-          #+#    #+#             */
-/*   Updated: 2023/01/26 14:43:44 by hmaciel-         ###   ########.fr       */
+/*   Updated: 2023/01/27 13:47:52 by hmaciel-         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -97,7 +97,7 @@ int	is_best_move_ra(t_stack *stacks)
 		pos++;
 	}
 	stacks->a = head;
-	if (pos >= 3)
+	if (pos >= (int)stacks->size_a / 2)
 		return (0);
 	return (1);
 }
