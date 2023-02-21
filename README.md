@@ -22,7 +22,7 @@ Push Swap is a 42 project that consists of ordering a list of integers using onl
 I chose the radix sort which was enough to pass with 84 points, but I will definitely return to this project in search of the 125 points.
 
 
-## What i learn:
+## What i learned:
  - Algorithm's Time Complexity
  - Sorting algorithms
  - Improve understanding of linked lists
